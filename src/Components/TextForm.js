@@ -11,6 +11,7 @@ export default function TextForm(props) {
     const handleLowerCase = () =>{
         console.log("The button was clicked")
         setText(text.toLowerCase())
+        props.showAlert("The text has been converted into lower case","success")
     }
     const handleOnChange = (event) =>{
         console.log("On Change")

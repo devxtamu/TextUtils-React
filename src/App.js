@@ -1,14 +1,14 @@
 import './App.css';
 import Navbar from './Components/Navbar';
 import TextForm from './Components/TextForm';
-import About from './Components/About';
+//import About from './Components/About';
 import React, { useState } from 'react'
 import Alert from './Components/Alert';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from "react-router-dom";
+//import {
+ // BrowserRouter as Router,
+  //Switch,
+  //Route
+//} from "react-router-dom";
 
 
 
@@ -40,14 +40,22 @@ function App() {
   }
 }
   return (
-    <Router>
+    //<Router>
+    <>
     <Navbar title="My App" mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert}/>
-      <Routes>
-        <Route  exact path='/about' element={<About mode={mode}/>}/>
-        <Route  exact path='/' element= {<TextForm showAlert={showAlert} heading= "Enter the text to analyze" mode={mode}/>}/>
-        </Routes>   
-    </Router>
+      <TextForm showAlert={showAlert} mode={mode} heading="Enter the text to analyze"/>
+      {/*<Switch>
+        <Route exact path="/about">
+          <About mode={mode}/>
+  </Route>
+  
+        <Route  exact path='/'>
+        <TextForm showAlert={showAlert} heading= "Enter the text to analyze" mode={mode}/>
+        </Route>
+        </Switch>   
+      </Router>*/}
+      </>
   );
 }
 export default App;
